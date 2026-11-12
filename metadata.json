@@ -1,0 +1,6 @@
+{
+  "name": "LayerLab 3D - Custom Anime Keychains, Idols, Photo-to-3D & Business Parts (India)",
+  "description": "Custom 3D printing and on-demand manufacturing in India: favorite anime character keychains, bike & car scale models, sacred idols, photo-to-3D lamps, phone cases, and business gap fillers.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

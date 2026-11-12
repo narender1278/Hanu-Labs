@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Custom 3D printing for businesses, creators, bikes, cars, collectibles and architectural models. Design, prototype and manufacture on demand." />
+  <title>LayerLab 3D | Custom 3D Printing & Manufacturing</title>
+  <style>
+    :root{--bg:#0b1020;--panel:#121a2e;--panel2:#17223a;--text:#f5f7fb;--muted:#a9b4c8;--line:#293650;--accent:#8b5cf6;--accent2:#22d3ee;--good:#34d399;--radius:20px;--max:1160px}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;line-height:1.6}
+    a{color:inherit;text-decoration:none}.wrap{width:min(var(--max),calc(100% - 40px));margin:auto}
+    .topbar{border-bottom:1px solid var(--line);background:#0b1020dd;position:sticky;top:0;z-index:20;backdrop-filter:blur(14px)}
+    .nav{height:72px;display:flex;align-items:center;justify-content:space-between;gap:20px}.brand{display:flex;align-items:center;gap:10px;font-weight:850;letter-spacing:-.5px}.brandmark{width:36px;height:36px;border-radius:11px;background:linear-gradient(135deg,var(--accent),var(--accent2));display:grid;place-items:center;color:white;font-weight:900}
+    .navlinks{display:flex;gap:24px;color:var(--muted);font-size:14px}.navlinks a:hover{color:white}.navcta,.btn{display:inline-flex;align-items:center;justify-content:center;border:0;border-radius:999px;padding:12px 19px;font-weight:750;background:linear-gradient(110deg,var(--accent),#6d7cff);color:white;cursor:pointer;box-shadow:0 8px 30px #6d5df533}.btn.secondary{background:transparent;border:1px solid #465574;box-shadow:none}.menu{display:none;background:none;border:1px solid var(--line);color:white;border-radius:10px;padding:8px 12px}
+    .hero{padding:82px 0 65px;overflow:hidden;position:relative}.hero:before{content:"";position:absolute;width:540px;height:540px;right:-160px;top:-180px;background:radial-gradient(circle,#7047e855,transparent 68%);pointer-events:none}.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:center;position:relative}
+    .eyebrow{display:inline-flex;gap:8px;align-items:center;color:#c4b5fd;background:#8b5cf61c;border:1px solid #8b5cf655;border-radius:999px;padding:7px 12px;font-size:12px;font-weight:800;letter-spacing:.08em;text-transform:uppercase}
+    h1{font-size:clamp(42px,6vw,68px);line-height:1.03;letter-spacing:-2.8px;margin:20px 0}.gradient{background:linear-gradient(100deg,#c4b5fd,#67e8f9);-webkit-background-clip:text;background-clip:text;color:transparent}
+    .lead{font-size:18px;color:var(--muted);max-width:610px}.hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin:28px 0}.trust{display:flex;gap:22px;flex-wrap:wrap;color:var(--muted);font-size:13px}.trust span:before{content:"✓";color:var(--good);font-weight:900;margin-right:7px}
+    .showcase{min-height:430px;border:1px solid #394666;border-radius:28px;background:linear-gradient(145deg,#1c2946,#11182b 65%);padding:22px;position:relative;box-shadow:0 30px 90px #0006}.showcase-head{display:flex;justify-content:space-between;color:#c4cee0;font-size:12px}.showcase-grid{display:grid;grid-template-columns:1fr 1fr;gap:13px;margin-top:22px}.show-tile{border:1px solid #43516d;background:#ffffff09;border-radius:18px;padding:15px;min-height:145px;display:flex;flex-direction:column;justify-content:space-between}.show-emoji{font-size:43px;filter:drop-shadow(0 8px 10px #0005)}.show-tile b{font-size:14px}.show-tile small{color:#aebbd0}.floating{position:absolute;bottom:17px;right:17px;background:#13243a;border:1px solid #3c5870;border-radius:14px;padding:11px 14px;font-size:12px;color:#b7f7e2}
+    section{padding:76px 0}.section-head{max-width:720px;margin-bottom:32px}.kicker{color:#a78bfa;text-transform:uppercase;letter-spacing:.12em;font-size:12px;font-weight:850}.section-head h2{font-size:clamp(30px,4vw,43px);letter-spacing:-1.5px;line-height:1.1;margin:10px 0}.section-head p{color:var(--muted);margin:0}
+    .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:17px}.card{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:22px;transition:.2s}.card:hover{transform:translateY(-4px);border-color:#6b63a8}.card-icon{font-size:30px;width:56px;height:56px;display:grid;place-items:center;background:#ffffff0b;border-radius:16px;margin-bottom:18px}.card h3{margin:0 0 8px;font-size:19px}.card p{margin:0;color:var(--muted);font-size:14px}.tag{display:inline-block;margin-top:15px;color:#c4b5fd;font-size:12px;font-weight:800}
+    .products{display:grid;grid-template-columns:repeat(4,1fr);gap:15px}.product{overflow:hidden;border-radius:18px;border:1px solid var(--line);background:var(--panel)}.product-art{height:160px;display:grid;place-items:center;font-size:60px;background:radial-gradient(circle at 50% 35%,#6b5caa66,#1b2944 70%)}.product-body{padding:16px}.product h3{font-size:16px;margin:0 0 5px}.product p{font-size:13px;color:var(--muted);margin:0}.product .mini{font-size:11px;color:#c4b5fd;font-weight:800;margin-top:12px;display:block}
+    .notice{margin-top:18px;padding:14px 16px;border:1px solid #725b35;background:#5c421b33;color:#f6d9a3;border-radius:13px;font-size:13px}
+    .split{display:grid;grid-template-columns:1fr 1fr;gap:36px;align-items:center}.panel{background:linear-gradient(145deg,#182541,#11192b);border:1px solid var(--line);border-radius:24px;padding:26px}.steps{display:grid;gap:15px}.step{display:grid;grid-template-columns:42px 1fr;gap:13px;align-items:start}.num{width:38px;height:38px;border-radius:12px;background:#8b5cf622;color:#c4b5fd;display:grid;place-items:center;font-weight:900}.step h3{margin:0 0 4px;font-size:16px}.step p{margin:0;color:var(--muted);font-size:14px}
+    .audience{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.aud{padding:16px;border:1px solid var(--line);border-radius:15px;background:#ffffff06}.aud b{display:block;font-size:14px}.aud span{font-size:12px;color:var(--muted)}
+    .quote{background:linear-gradient(120deg,#20194a,#13263c);border:1px solid #51448d;border-radius:24px;padding:30px;display:grid;grid-template-columns:1fr auto;gap:24px;align-items:center}.quote h2{font-size:30px;line-height:1.1;margin:0 0 10px}.quote p{color:#c4cde0;margin:0}
+    .contact-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:30px}.contact-info{color:var(--muted)}.contact-info strong{color:white}.form{display:grid;gap:12px}.form input,.form select,.form textarea{width:100%;border:1px solid #35425e;background:#0d1528;color:white;border-radius:12px;padding:13px 14px;font:inherit}.form textarea{min-height:110px;resize:vertical}.form-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}.form button{width:fit-content}
+    footer{border-top:1px solid var(--line);padding:28px 0;color:var(--muted);font-size:13px}.footer-inner{display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap}
+    @media(max-width:850px){.hero-grid,.split,.contact-grid{grid-template-columns:1fr}.showcase{min-height:360px}.cards{grid-template-columns:repeat(2,1fr)}.products{grid-template-columns:repeat(2,1fr)}.audience{grid-template-columns:repeat(2,1fr)}.navlinks{display:none}.menu{display:block}.navlinks.open{display:flex;position:absolute;top:71px;left:0;right:0;padding:20px;background:#0b1020;flex-direction:column;border-bottom:1px solid var(--line)}}
+    @media(max-width:540px){.wrap{width:min(100% - 28px,var(--max))}.navcta{display:none}.hero{padding:55px 0 35px}h1{letter-spacing:-1.8px}.cards,.products{grid-template-columns:1fr 1fr}.product-art{height:125px}.showcase{padding:15px}.show-tile{min-height:125px}.quote{grid-template-columns:1fr}.form-row{grid-template-columns:1fr}section{padding:58px 0}}
+  </style>
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap nav">
+    <a class="brand" href="#home"><span class="brandmark">L</span><span>LayerLab <span class="gradient">3D</span></span></a>
+    <nav class="navlinks" id="navlinks">
+      <a href="#solutions">Solutions</a><a href="#products">What we make</a><a href="#process">How it works</a><a href="#business">For businesses</a><a href="#contact">Contact</a>
+    </nav>
+    <a class="navcta" href="#contact">Request a quote ↗</a>
+    <button class="menu" id="menuBtn" aria-label="Toggle navigation">☰</button>
+  </div>
+</header>
+
+<main>
+  <section class="hero" id="home">
+    <div class="wrap hero-grid">
+      <div>
+        <span class="eyebrow">Custom 3D printing · Made to order</span>
+        <h1>From your idea<br>to a real <span class="gradient">3D product.</span></h1>
+        <p class="lead">We design and produce custom 3D-printed parts, displays, prototypes, collectibles and models — for businesses, creators and enthusiasts.</p>
+        <div class="hero-actions"><a class="btn" href="#contact">Get a custom quote ↗</a><a class="btn secondary" href="#products">Explore what we make</a></div>
+        <div class="trust"><span>One-off to small batches</span><span>Custom dimensions</span><span>Design assistance</span></div>
+      </div>
+      <div class="showcase">
+        <div class="showcase-head"><b>THE CUSTOM PRINT STUDIO</b><span>IDEA → DESIGN → PRINT</span></div>
+        <div class="showcase-grid">
+          <div class="show-tile"><span class="show-emoji">🏭</span><div><b>Industrial parts</b><br><small>Jigs · fixtures · brackets</small></div></div>
+          <div class="show-tile"><span class="show-emoji">🏍️</span><div><b>Bike & car accessories</b><br><small>Holders · models · trims</small></div></div>
+          <div class="show-tile"><span class="show-emoji">🦸</span><div><b>Collectibles</b><br><small>Licensed figures · display pieces</small></div></div>
+          <div class="show-tile"><span class="show-emoji">🛕</span><div><b>Idols & decor</b><br><small>Respectful decorative models</small></div></div>
+        </div>
+        <div class="floating">● Custom orders open</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="solutions">
+    <div class="wrap">
+      <div class="section-head"><span class="kicker">What problem do we solve?</span><h2>Small-batch manufacturing without the big-factory setup.</h2><p>When standard products do not fit, original spare parts are difficult to source, or a business needs only a few customized pieces, we help bridge the gap.</p></div>
+      <div class="cards">
+        <article class="card"><div class="card-icon">🧩</div><h3>Hard-to-find plastic parts</h3><p>Recreate suitable non-safety-critical components from a sample, measurements or an approved CAD file.</p><span class="tag">FOR REPAIR & MAINTENANCE</span></article>
+        <article class="card"><div class="card-icon">🛍️</div><h3>Custom retail displays</h3><p>Product stands, shelf dividers, price-label holders, counter organizers and branded display fixtures.</p><span class="tag">FOR SHOPS & SHOWROOMS</span></article>
+        <article class="card"><div class="card-icon">⚙️</div><h3>Jigs, fixtures & organizers</h3><p>Made-to-measure assembly aids, tool holders, drill guides and workflow accessories for workshops.</p><span class="tag">FOR SMALL INDUSTRIES</span></article>
+        <article class="card"><div class="card-icon">📐</div><h3>Prototypes & scale models</h3><p>Turn a CAD design into a physical sample, product prototype or architectural presentation model.</p><span class="tag">FOR DESIGNERS & BUILDERS</span></article>
+        <article class="card"><div class="card-icon">🎁</div><h3>Personalized products</h3><p>Nameplates, desk accessories, gifts, event giveaways and custom-fit everyday organizers.</p><span class="tag">FOR INDIVIDUAL CUSTOMERS</span></article>
+        <article class="card"><div class="card-icon">🧱</div><h3>Low-volume production</h3><p>Test demand or manufacture small batches before committing to expensive tooling or moulds.</p><span class="tag">FOR STARTUPS & SMEs</span></article>
+      </div>
+    </div>
+  </section>
+
+  <section id="products" style="background:#0e1629">
+    <div class="wrap">
+      <div class="section-head"><span class="kicker">Product catalogue</span><h2>What you can order</h2><p>These are example product families. Every order is checked for feasibility, material suitability, design rights and intended use before quotation.</p></div>
+      <div class="products">
+        <article class="product"><div class="product-art">🦸</div><div class="product-body"><h3>Hero & character collectibles</h3><p>Display figures, busts, cosplay props and fan collectibles where the customer or seller has the required rights or licence.</p><span class="mini">COLLECTIBLES · DISPLAY</span></div></article>
+        <article class="product"><div class="product-art">🏍️</div><div class="product-body"><h3>Bikes & motorcycles</h3><p>Miniature bike models, garage display pieces, keychains, wall mounts and non-critical accessory prototypes.</p><span class="mini">AUTOMOTIVE · HOBBY</span></div></article>
+        <article class="product"><div class="product-art">🏎️</div><div class="product-body"><h3>Cars & automotive</h3><p>Scale models, dashboard organizers, cable clips, display stands and prototype trim pieces.</p><span class="mini">AUTOMOTIVE · DISPLAY</span></div></article>
+        <article class="product"><div class="product-art">🛕</div><div class="product-body"><h3>Gods, idols & devotional decor</h3><p>Respectful decorative idols, miniature temple decor, pooja-space organizers and custom display bases.</p><span class="mini">DEVOTIONAL · HOME DECOR</span></div></article>
+        <article class="product"><div class="product-art">🏪</div><div class="product-body"><h3>Shop & retail accessories</h3><p>Display stands, product holders, shelf labels, counter trays and custom merchandising fixtures.</p><span class="mini">RETAIL · B2B</span></div></article>
+        <article class="product"><div class="product-art">🔩</div><div class="product-body"><h3>Industrial utility parts</h3><p>Jigs, fixtures, covers, brackets, knobs and tool organizers after fit and material review.</p><span class="mini">INDUSTRIAL · B2B</span></div></article>
+        <article class="product"><div class="product-art">🏢</div><div class="product-body"><h3>Architecture & construction</h3><p>Building scale models, site-layout models, concept models and civil-engineering teaching aids.</p><span class="mini">ARCHITECTURE · EDUCATION</span></div></article>
+        <article class="product"><div class="product-art">🧪</div><div class="product-body"><h3>Prototypes & enclosures</h3><p>Product housings, electronics enclosures, sensor mounts and proof-of-concept prototypes.</p><span class="mini">STARTUPS · PRODUCT DESIGN</span></div></article>
+      </div>
+      <div class="notice"><strong>Important:</strong> Famous movie/game characters, branded logos, vehicle designs and other protected designs may require permission or a licence. We only accept jobs where the customer has the necessary rights or the design is original/licensed. Religious products should be made and marketed respectfully. Printed parts are not automatically suitable for food contact, heat, load-bearing or vehicle safety applications.</div>
+    </div>
+  </section>
+
+  <section id="process">
+    <div class="wrap split">
+      <div>
+        <div class="section-head"><span class="kicker">Simple ordering process</span><h2>How customers buy from us</h2><p>Make it easy for customers to explain what they need. You handle design, material selection, production and delivery.</p></div>
+        <div class="steps">
+          <div class="step"><span class="num">01</span><div><h3>Customer sends a requirement</h3><p>They share a photo, sketch, dimensions, CAD file, quantity and intended use.</p></div></div>
+          <div class="step"><span class="num">02</span><div><h3>We check and quote</h3><p>Confirm feasibility, design effort, material, finish, lead time and price.</p></div></div>
+          <div class="step"><span class="num">03</span><div><h3>Approve a sample or prototype</h3><p>For fit-sensitive jobs, print a test piece and get customer approval before batch production.</p></div></div>
+          <div class="step"><span class="num">04</span><div><h3>Print, inspect and deliver</h3><p>Check dimensions and finish, pack the order and retain approved job specifications for reorders.</p></div></div>
+        </div>
+      </div>
+      <div class="panel">
+        <span class="kicker">How we price a job</span><h2 style="margin:10px 0 18px">A clear, itemized quote.</h2>
+        <p style="color:var(--muted);font-size:14px">Avoid quoting only by weight. Price according to the whole job:</p>
+        <div class="steps">
+          <div class="step"><span class="num">₹</span><div><h3>Design & preparation</h3><p>CAD modelling, file repair, slicing and setup time.</p></div></div>
+          <div class="step"><span class="num">⚖</span><div><h3>Material & machine time</h3><p>Material type, print duration, supports and wastage.</p></div></div>
+          <div class="step"><span class="num">✦</span><div><h3>Finishing & quality checks</h3><p>Sanding, assembly, painting, dimensional checks and packaging.</p></div></div>
+          <div class="step"><span class="num">↗</span><div><h3>Delivery & repeat orders</h3><p>Shipping, urgency and any quantity-based pricing.</p></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="business" style="background:#0e1629">
+    <div class="wrap">
+      <div class="section-head"><span class="kicker">Who we target</span><h2>We sell to businesses with a specific problem.</h2><p>Start with a narrow customer segment, learn its recurring needs and build a catalogue around the parts it repeatedly orders.</p></div>
+      <div class="audience">
+        <div class="aud"><b>🏭 Factories & SMEs</b><span>Jigs, fixtures, machine accessories</span></div>
+        <div class="aud"><b>🔧 Repair workshops</b><span>Suitable replacement plastic parts</span></div>
+        <div class="aud"><b>📱 Retail stores</b><span>Displays, holders, organizers</span></div>
+        <div class="aud"><b>🏍️ Bike & car shops</b><span>Models and non-critical accessories</span></div>
+        <div class="aud"><b>🏗️ Architects</b><span>Scale models and prototypes</span></div>
+        <div class="aud"><b>🎓 Schools & colleges</b><span>STEM and engineering models</span></div>
+        <div class="aud"><b>🎨 Creators & event teams</b><span>Original props and custom pieces</span></div>
+        <div class="aud"><b>🏠 Direct consumers</b><span>Personalized gifts and decor</span></div>
+      </div>
+      <div class="split" style="margin-top:32px">
+        <div class="panel"><h3>How we find customers</h3><p style="color:var(--muted);font-size:14px">Visit industrial estates and repair clusters. Speak to store owners and maintenance managers. Ask what plastic part, fixture or display they struggle to source. Offer a sample only after understanding the use case.</p></div>
+        <div class="panel"><h3>How we win repeat orders</h3><p style="color:var(--muted);font-size:14px">Save approved CAD files and dimensions, assign a part number, record material and revision, and offer reorder pricing. Build a small digital catalogue from real customer requests.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="quote"><div><h2>Have a part, sketch or idea?</h2><p>Send it to us. We’ll review the requirement and respond with the next steps and a quotation.</p></div><a class="btn" href="#contact">Start your custom order ↗</a></div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="wrap contact-grid">
+      <div><div class="section-head"><span class="kicker">Let's make it real</span><h2>Request a quote</h2><p>Tell us what you want to make. Attachments can be shared later through WhatsApp or email.</p></div>
+        <div class="contact-info"><p><strong>Service area:</strong> Chennai and nearby areas (edit this to your actual service area).</p><p><strong>WhatsApp:</strong> +91 XXXXX XXXXX</p><p><strong>Email:</strong> hello@yourbrand.in</p><p><strong>Business hours:</strong> Mon–Sat, 9:00 AM–6:00 PM</p><p style="font-size:12px">Replace the sample contact details before publishing.</p></div>
+      </div>
+      <div class="panel">
+        <form class="form" id="quoteForm">
+          <div class="form-row"><input id="name" required placeholder="Your name" /><input id="phone" required placeholder="Phone / WhatsApp" /></div>
+          <div class="form-row"><select id="customer"><option value="">I am a...</option><option>Business owner</option><option>Factory / workshop</option><option>Retail store</option><option>Architect / designer</option><option>Individual customer</option></select><select id="category"><option value="">Product category</option><option>Industrial part / jig</option><option>Retail display</option><option>Bike / car product</option><option>Hero / character collectible</option><option>God / idol / devotional decor</option><option>Architecture / education model</option><option>Other custom product</option></select></div>
+          <textarea id="details" required placeholder="Describe the product, quantity, dimensions, material (if known) and how it will be used."></textarea>
+          <button class="btn" type="submit">Prepare WhatsApp enquiry ↗</button>
+          <small style="color:var(--muted)">This demo form opens WhatsApp with your enquiry. Set your real WhatsApp number in the code first.</small>
+        </form>
+      </div>
+    </div>
+  </section>
+</main>
+<footer><div class="wrap footer-inner"><span>© <span id="year"></span> LayerLab 3D. Made to order.</span><span>Custom 3D printing · Prototyping · Small-batch manufacturing</span></div></footer>
+<script>
+  // IMPORTANT: Replace this with your WhatsApp number, including country code, digits only.
+  const WHATSAPP_NUMBER = "91XXXXXXXXXX";
+  document.getElementById("year").textContent = new Date().getFullYear();
+  document.getElementById("menuBtn").addEventListener("click", () => document.getElementById("navlinks").classList.toggle("open"));
+  document.getElementById("quoteForm").addEventListener("submit", function(e){
+    e.preventDefault();
+    const data = {
+      name: document.getElementById("name").value.trim(),
+      phone: document.getElementById("phone").value.trim(),
+      customer: document.getElementById("customer").value || "Not specified",
+      category: document.getElementById("category").value || "Not specified",
+      details: document.getElementById("details").value.trim()
+    };
+    const message = `Hello, I would like a 3D printing quotation.%0A%0AName: ${encodeURIComponent(data.name)}%0APhone: ${encodeURIComponent(data.phone)}%0ACustomer type: ${encodeURIComponent(data.customer)}%0ACategory: ${encodeURIComponent(data.category)}%0ARequirement: ${encodeURIComponent(data.details)}`;
+    if(WHATSAPP_NUMBER.includes("X")){alert("Please replace WHATSAPP_NUMBER in the code with your WhatsApp number first.");return;}
+    window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${message}`,"_blank");
+  });
+</script>
+</body>
+</html>
